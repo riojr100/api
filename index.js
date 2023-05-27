@@ -19,9 +19,11 @@ app.get("/manga/searchMangaById/:id", (request, response) => {
 // manga/searchManga/{string}
 app.get("/manga/searchManga/:query", (request, response) => {
   const query = request.params.query.split(",");
-  axios.get(`https://api.jikan.moe/v4/manga/?q=${query}&page=1`).then((res) => {
-    response.send(res.data);
-  });
+  axios
+    .get(`https://api.jikan.moe/v4/manga/?q=${query}&page=1&type="manga"`)
+    .then((res) => {
+      response.send(res.data);
+    });
 });
 // /manga/recommendation
 app.get("/manga/recommendation", (request, response) => {
