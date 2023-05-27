@@ -2,8 +2,9 @@ const express = require("express");
 // Initialize Express
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("running on vercel");
+app.get("/:id", (req, res) => {
+  const id = req.params.id.split(",");
+  res.send(`id : ${id}`);
 });
 
 app.listen(5000, () => {
