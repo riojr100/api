@@ -7,8 +7,8 @@ app.get("/manga/:id", (req, res) => {
   const id = req.params.id.split(",");
   axios
     .get(`https://api.jikan.moe/v4/manga/${id}`)
-    .then((res) => console.log(res))
-    .finally((res) => console.log(res));
+    .then((res) => res.json())
+    .then((res) => console.log(res));
   res.send(`id : ${id}`);
 });
 
