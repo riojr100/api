@@ -2,7 +2,13 @@ const express = require("express");
 const axios = require("axios");
 // Initialize Express
 const app = express();
+import cors from "cors";
 
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 // manga/searchMangaById/{id}
 app.get("/manga/searchMangaById/:id", (request, response) => {
   const id = request.params.id.split(",");
