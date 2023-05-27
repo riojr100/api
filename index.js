@@ -2,7 +2,7 @@ const express = require("express");
 const axios = require("axios");
 // Initialize Express
 const app = express();
-import cors from "cors";
+const cors = require("cors");
 
 app.use(
   cors({
