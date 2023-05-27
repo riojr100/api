@@ -20,7 +20,7 @@ app.get("/manga/searchMangaById/:id", (request, response) => {
 app.get("/manga/searchManga/:query", (request, response) => {
   const query = request.params.query.split(",");
   axios
-    .get(`https://api.jikan.moe/v4/manga/?q=${query}&page=1&type=manga`)
+    .get(`https://api.jikan.moe/v4/manga/?q=${query}&page=1&type="manga"`)
     .then((res) => {
       response.send(res.data);
     });
