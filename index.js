@@ -3,13 +3,12 @@ const axios = require("axios");
 // Initialize Express
 const app = express();
 
-app.get("/manga/:id", (req, res) => {
-  const id = req.params.id.split(",");
+app.get("/manga/:id", (request, response) => {
+  const id = request.params.id.split(",");
   axios
     .get(`https://api.jikan.moe/v4/manga/${id}`)
     .then((res) => res.json())
-    .then((res) => console.log(res));
-  res.send(`id : ${id}`);
+    .then((res) => response.send(res));
 });
 
 app.listen(5000, () => {
