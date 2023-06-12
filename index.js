@@ -24,7 +24,8 @@ app.get("/manga/searchManga/:query", (request, response) => {
   // axios.get(`https://api.jikan.moe/v4/manga/?q=${query}&page=1`).then((res) => {
   axios
     .get(
-      `https://api.jikan.moe/v4/manga?page=1&limit=20&q=${query}&type=manga&min_score=0&max_score=10&status=&sfw=true`
+      //      `https://api.jikan.moe/v4/manga?page=1&limit=20&q=${query}&type=manga&min_score=0&max_score=10&status=&sfw=true`
+      `https://api.jikan.moe/v4/manga/?sfw=true&q=${query}`
     )
     .then((res) => {
       response.send(res.data);
